@@ -2,10 +2,7 @@ $(document).ready(function() {
     let glimmer = 0;
     glimmerPlus = 1;
 
-    let autoAttackPrice = 10;
-
-    let clickAttack = 1;
-    let autoAttackPlus = 0;
+    let clickAttack = 5;
 
     let engramRarity = {
         common: 0, uncommon: 0, rare: 0, legendary: 0, exotic: 0
@@ -16,7 +13,7 @@ $(document).ready(function() {
     }
     
 	let n = Math.floor(Math.random() * (100 - 0 + 1) + 0)
-    if (enemyRank < 75) {
+    if (n < 75) {
     	enemyHP = 25
     } else if (n < 90) {
     	enemyHP = 50
@@ -27,9 +24,9 @@ $(document).ready(function() {
     }
 
     $("#testEnemy").click(function() {
-		enemyHP -= clickAttack + autoAttackPlus
+		enemyHP -= clickAttack
         
-        console.log("Damage:", clickAttack + autoAttackPlus, "Enemy HP:", enemyHP); //Displays Damage + Enemy HP
+        document.getElementById("output").innerHTML = "Damage: " + clickAttack + "\nEnemy HP: " + enemyHP;
 
         const engrams = Math.floor(Math.random() * 100);
 
@@ -51,7 +48,7 @@ $(document).ready(function() {
         
         if (enemyHP < 0) {
                 $(".info").text("You have defeated the enemy.\nYou search for a new foe...");
-            enemyHP = enemyRank;
+            enemyHP = n;
             $("#testEnemy").attr('disabled', true);
             const timeUntilNewEnemyAppears = Math.floor(Math.random() * 5000) + 1000;
             setTimeout(() => {
@@ -67,12 +64,6 @@ $(document).ready(function() {
 
     function changeInventory() {
         $("#glimmer").html("Glimmer: " + glimmer);
-
-        if (autoAttackPlus > 0) {
-            $("#extraDamage").html("You have " + autoAttackPlus + " extra damage");
-        } else {
-            $("#extraDamage").html("");
-        }
 
         if (engramRarity.common > 0) {
             $("#commonEngram").html("You have " + engramRarity.common + " Common Engrams");
@@ -179,11 +170,8 @@ $(document).ready(function() {
 
 //          <----- Rahool ----- End ----->
 
-//          <----- Banshee ----- Start ----->
+//          <----- Menu Travel ----->
 
-//          <----- Banshee ----- End ----->
-
-//Menu Travel
     $("#director").click(function() { //Director
         menu = switchMenu("director");
     });

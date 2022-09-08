@@ -78,25 +78,6 @@ hr {
     background-color: var(--exotic);
 }
 
-/* Banshee */
-.gunsmithItems {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
-}
-
-.gunsmithItems > #autoGun1 {
-    background-color: var(--uncommon);
-}
-
-.gunsmithItems > #autoGun1 {
-    background-color: var(--rare);
-}
-
-.gunsmithItems > #autoGun1 {
-    background-color: var(--legendary);
-}
-
 .main > #testEnemy {
     background-color: var(--exotic);
 }
