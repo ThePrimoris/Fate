@@ -2,25 +2,25 @@ $(document).ready(function() {
     let glimmer = 0;
     glimmerPlus = 1;
 
+    let autoAttackPrice = 10;
+
     let clickAttack = 1;
+    let autoAttackPlus = 0;
 
     let engramRarity = {
         common: 0, uncommon: 0, rare: 0, legendary: 0, exotic: 0
     }
 
-    let autoAttackPrice = 10;
-    let autoAttackPlus = 0;
-
     let enemyHP = {
         minor: 25, major: 50, ultra: 100, boss: 200
     }
     
-	let enemyRank = Math.floor(Math.random() * (100 - 0 + 1) + 0)
+	let n = Math.floor(Math.random() * (100 - 0 + 1) + 0)
     if (enemyRank < 75) {
     	enemyHP = 25
-    } else if (enemyRank < 90) {
+    } else if (n < 90) {
     	enemyHP = 50
-    } else if (enemyRank < 98) {
+    } else if (n < 98) {
     	enemyHP = 100
     }  else {
     	enemyHP = 200
@@ -60,18 +60,10 @@ $(document).ready(function() {
             }, timeUntilNewEnemyAppears);
             }
 
-        /* if (enemyHP == enemyHP.minor) {
-            $("#testEnemy").css("background-color: var(--minor");
-        } else if (enemyHP == enemyHP.major) {
-            $("#testEnemy").css("background-color: var(--major");
-        } else if (enemyHP == enemyHP.boss) {
-            $("#testEnemy").css("background-color: var(--boss");
-        } */
-
         changeInventory();
     });
 
-// Rahool's Inventory
+// Inventory Changes
 
     function changeInventory() {
         $("#glimmer").html("Glimmer: " + glimmer);
@@ -188,24 +180,6 @@ $(document).ready(function() {
 //          <----- Rahool ----- End ----->
 
 //          <----- Banshee ----- Start ----->
-
-// Banshee Inventory
-
-    function gunsmithWeapon() { //Show Gun in inventory
-
-        if (glimmer >= autoAttackPrice) {
-            $("#autoGun").css("display", "block");
-        } else {
-            $("#autoGun").css("display", "none");
-        }
-    }
-
-    $("#autoGun").click(function() { //Purchase Guns
-        glimmer -= autoAttackPrice;
-        autoAttackPlus ++;
-        gunsmithWeapon();
-        changeInventory();
-    });
 
 //          <----- Banshee ----- End ----->
 
