@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="assets/lib/app.js"></script>
+    <title>Fate: Idle Game</title>
+</head>
+<body>
+    <div class="content">
+
+        <div class="menus">
+            <div class="main">
+                <button id="director" title="Go out on patrol">Director</button>
+                <button id="tower" title="Visit the Tower">The Tower</button>
+                <button id="vault" title="Open your vault">Vault</button>
+
+                <p class="info">Click.</p>
+                <input type="image" id="testEnemy" alt="Enemy" src="assets/img/Dreg.jpg" height="300px" width="250px">
+            </div>
+
+            <div class="director">
+                <h1>Director</h1>
+                <hr>
+                <!-- <p class="info">Click.</p>
+                <input type="image" id="testEnemy" alt="Enemy" src="assets/img/Dreg.jpg" height="300px" width="250px"> -->
+
+                <br>
+                <button class="orbit" title="Return to Orbit">Orbit</button>
+            </div>
+
+            <div class="tower">
+                <h1>The Tower</h1> <br>
+                <h3>Rahool</h3>
+                <div class="engrams">
+                    <button id="whiteEngram" title="10 Glimmer">Decrypt a Common Engram</button>
+                    <button id="greenEngram" title="50 Glimmer">Decrypt a Uncommon Engram</button>
+                    <button id="blueEngram" title="100 Glimmer">Decrypt a Rare Engram</button>
+                    <button id="purpleEngram" title="500 Glimmer">Decrypt a Legendary Engram</button>
+                    <button id="orangeEngram">Decrypt an Exotic Engram</button>
+                </div>
+
+                <h3>Banshee</h3>
+                <div class="gunsmithItems">
+                    <button id="autoGun">Buy a gun</button>
+                </div>
+
+                <br>
+                <button class="orbit" title="Return to Orbit">Orbit</button>
+            </div>
+            
+            <div class="vault">
+                <h1>Vault</h1>
+                <br>
+                <button class="orbit" title="Return to Orbit">Orbit</button>
+            </div>
+
+        </div>
+
+        <div class="currency">
+            <p id="glimmer">Glimmer: 0</p>
+            <p id="extraDamage"></p>
+            <p id="commonEngram" style="color:#C4BCB4"></p>
+            <p id="uncommonEngram" style="color:#347040"></p>
+            <p id="rareEngram" style="color:#5076A3"></p>
+            <p id="legendaryEngram" style="color:#4E3263"></p>
+            <p id="exoticEngram" style="color:#CEAE32"></p>
+        </div>
+    </div>
+</body>
+</html>
