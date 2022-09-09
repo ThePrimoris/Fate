@@ -59,7 +59,7 @@ $("#testEnemy").click(function() {
         }
     }
     
-    document.getElementById("output").innerHTML = "Damage: " + clickAttack + "\nEnemy HP: " + enemyHP
+    document.getElementById("output").innerHTML = "Damage: " + clickAttack
     
     
     if (enemyHP === 0) {
