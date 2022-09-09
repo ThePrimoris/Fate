@@ -30,7 +30,7 @@ $(document).ready(function() {
 
         const engrams = Math.floor(Math.random() * 100);
 
-        if (enemyHP == 0) {
+        if (enemyHP <= 0) {
             glimmer += glimmerPlus * Math.floor(Math.random() * 50) + 25;
 
             if (engrams > 1 && engrams < 50) {
@@ -46,14 +46,14 @@ $(document).ready(function() {
             }
         }
         
-        if (enemyHP < 0) {
-                $(".info").text("You have defeated the enemy.\nYou search for a new foe...");
+        if (enemyHP <= 0) {
+            $(".info").text("You have defeated the enemy.\nYou search for a new foe...");
             enemyHP = n;
             $("#testEnemy").attr('disabled', true);
-            const timeUntilNewEnemyAppears = Math.floor(Math.random() * 5000) + 1000;
+            const timeUntilNewEnemyAppears = Math.floor(Math.random() * 10) + 1000;
             setTimeout(() => {
             $("#testEnemy").removeAttr("disabled");
-            $(".info").text("Click.");
+            $(".info").text("Continue clicking.");
             }, timeUntilNewEnemyAppears);
             }
 

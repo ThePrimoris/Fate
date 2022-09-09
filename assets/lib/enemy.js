@@ -1,37 +1,34 @@
 $(document).ready(function() {
     class Enemy {
-        constructor(hp, atk, xp) {
+        constructor(hp, shield, atk) {
             this.hp = 0;
+            this.shield = 0;
             this.atk = 0;
-            this.xp = 0;
         }
     }
 
-    class Minor {
+    class Dreg {
         constructor (hp, atk, xp) {
             super ()
-            this.hp = 25
+            this.hp = 25;
+            this.atk = 5;
         }
     }
 
-    class Major {
+    class Vandal {
         constructor (hp, atk, xp) {
             super ()
-            this.hp = 50
+            this.hp = 50;
+            this.atk = 10;
         }
     }
 
-    class Boss {
+    class Captain {
         constructor (hp, atk, xp) {
             super ()
-            this.hp = 200
-        }
-    }
-
-    class DregMinor extends Minor {
-        constructor (hp, atk, xp) {
-            super ()
-            this.hp = 15 + Minor.HP
+            this.hp = 200;
+            this.shield = 15;
+            this.atk = 15;
         }
     }
 
