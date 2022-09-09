@@ -24,20 +24,24 @@ let enemyHP = getEnemyHP()
 let glimmer = 0
 glimmerPlus = 1
 
-let clickAttack = 6
+let clickAttack = 1
 
 let engramRarity = {
     common: 0, uncommon: 0, rare: 0, legendary: 0, exotic: 0
 }
 
-
 $("#testEnemy").click(function() {
 
     enemyHP -= clickAttack
 
-    const engrams = Math.floor(Math.random() * 100)
+    document.getElementById("enemyHealthBarValue").innerHTML = enemyHP
 
+    document.getElementById("enemyHealthBar").value = enemyHP
+
+    const engrams = Math.floor(Math.random() * 100)
+    
     if (enemyHP < 0) enemyHP = 0
+
 
     if (enemyHP === 0) {
         glimmer += glimmerPlus * Math.floor(Math.random() * 50) + 25
@@ -57,10 +61,12 @@ $("#testEnemy").click(function() {
     
     document.getElementById("output").innerHTML = "Damage: " + clickAttack + "\nEnemy HP: " + enemyHP
     
+    
     if (enemyHP === 0) {
         $(".info").text("You have defeated the enemy.\nYou search for a new foe...")
         
         enemyHP = getEnemyHP()
+        document.getElementById("enemyHealthBar").max = enemyHP
         
         $("#testEnemy").attr('disabled', true)
         const timeUntilNewEnemyAppears = Math.floor(Math.random() * 10) + 1000
@@ -72,6 +78,8 @@ $("#testEnemy").click(function() {
 
     changeInventory()
 })
+
+document.getElementById("enemyHealthBar").max = enemyHP
 
 // Inventory Changes
 
