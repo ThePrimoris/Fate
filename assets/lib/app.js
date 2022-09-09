@@ -69,9 +69,9 @@ $(document).ready(function() {
             document.getElementById("enemyHealthBar").max = enemyHP
 
             let r = Math.floor(Math.random() * (10 - 0))
-            if (r > 5) {
+            if (r > 3) {
                 document.getElementById("testEnemy").src = "assets/img/Dreg.jpg"
-            } else if(r < 5) {
+            } else if(r <= 8) {
                 document.getElementById("testEnemy").src = "assets/img/Vandal.jpg"
             } else {
                 document.getElementById("testEnemy").src = "assets/img/Vandal.jpg"
