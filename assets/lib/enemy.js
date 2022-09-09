@@ -1,43 +1,28 @@
 $(document).ready(function() {
     class Enemy {
-        constructor(hp, shield, atk) {
-            this.hp = 0;
-            this.shield = 0;
-            this.atk = 0;
+        constructor(hp, atk, shield = 0) {
+            this.hp = hp
+            this.shield = shield
+            this.atk = atk
         }
     }
 
-    class Dreg {
-        constructor (hp, atk, xp) {
-            super ()
-            this.hp = 25;
-            this.atk = 5;
+    class Dreg extends Enemy {
+        constructor (hp, atk, shield) {
+            super (hp, atk, shield)
         }
     }
 
-    class Vandal {
-        constructor (hp, atk, xp) {
-            super ()
-            this.hp = 50;
-            this.atk = 10;
+    class Vandal extends Enemy {
+        constructor (hp, atk, shield) {
+            super (hp, atk, shield)
         }
     }
 
-    class Captain {
-        constructor (hp, atk, xp) {
-            super ()
-            this.hp = 200;
-            this.shield = 15;
-            this.atk = 15;
+    class Captain extends Enemy {
+        constructor (hp, atk, shield) {
+            super (hp, atk, shield)
         }
     }
 
-    let n = Math.floor(Math.random() * (100 - 0 + 1) + 0)
-    let hp = 0
-    if (n < 75) { hp = 25 } 
-    else if (n < 90) { hp = 50 }
-    else if (n < 98) { hp = 100 }
-    else { hp = 200 }
-
-    let enemy = new Enemy(hp, 100, 25);
-});
+})
