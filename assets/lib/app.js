@@ -1,5 +1,14 @@
 $(document).ready(function() {
 
+    let glimmer = 10
+    glimmerPlus = 1
+
+    let engramRarity = {
+        common: 0, uncommon: 0, rare: 0, legendary: 0, exotic: 0
+    }
+    
+    let clickAttack = 5
+
     function getEnemyHP() {
     
     let enemyHP = {
@@ -20,15 +29,6 @@ $(document).ready(function() {
         }
     
     let enemyHP = getEnemyHP()
-    
-    let glimmer = 10
-    glimmerPlus = 1
-    
-    let clickAttack = 5
-    
-    let engramRarity = {
-        common: 0, uncommon: 0, rare: 0, legendary: 0, exotic: 0
-    }
     
     $("#testEnemy").click(function() {
     
