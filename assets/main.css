@@ -57,6 +57,11 @@ progress  {
     margin-left: 0;
   }
 
+  progress::-moz-progress-bar {
+    background: #A02524;
+    border-radius: 0px;
+  }
+
   progress::-webkit-progress-bar {
     background-color: #2E2E2E;
     border-radius: 0px;
@@ -65,7 +70,6 @@ progress  {
   progress::-webkit-progress-value {
     background-color: #A02524;
     border-radius: 0px;
-
   }
 
 .currency {
