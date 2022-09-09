@@ -82,29 +82,9 @@ progress  {
 
 .engrams {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 105px);
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
-}
-
-.engrams > #whiteEngram {
-    background-color: var(--common);
-}
-
-.engrams > #greenEngram {
-    background-color: var(--uncommon);
-}
-
-.engrams > #blueEngram {
-    background-color: var(--rare);
-}
-
-.engrams > #purpleEngram {
-    background-color: var(--legendary);
-}
-
-.engrams > #orangeEngram {
-    background-color: var(--exotic);
 }
 
 .main > #testEnemy {

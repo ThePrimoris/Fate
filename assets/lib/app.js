@@ -24,7 +24,7 @@ let enemyHP = getEnemyHP()
 let glimmer = 0
 glimmerPlus = 1
 
-let clickAttack = 10
+let clickAttack = 5
 
 let engramRarity = {
     common: 0, uncommon: 0, rare: 0, legendary: 0, exotic: 0
@@ -162,28 +162,28 @@ $("#whiteEngram").click(function() {
 })
 
 $("#greenEngram").click(function() {
-    glimmer -= 100
+    glimmer -= 20
     engramRarity.uncommon -= 1
     changeInventory()
     decryptEngram()
 })
 
 $("#blueEngram").click(function() {
-    glimmer -= 500
+    glimmer -= 30
     engramRarity.rare -= 1
     changeInventory()
     decryptEngram()
 })
 
 $("#purpleEngram").click(function() {
-    glimmer -= 1000
+    glimmer -= 40
     engramRarity.legendary -= 1
     changeInventory()
     decryptEngram()
 })
 
 $("#orangeEngram").click(function() {
-    glimmer -= 5000
+    glimmer -= 50
     engramRarity.exotic -= 1
     changeInventory()
     decryptEngram()
