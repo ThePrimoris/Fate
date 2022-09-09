@@ -155,7 +155,7 @@ $(document).ready(function() {
             let id = element.dataset.id;
             let value = engramRarity[id]
             if (value !== 0) {
-              element.innerText = value // It will do engramRarity.whateverTheIdIsOnTheElement
+              element.innerText = value
             }
           })
     }
