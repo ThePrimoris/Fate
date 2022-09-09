@@ -24,7 +24,7 @@ let enemyHP = getEnemyHP()
 let glimmer = 0
 glimmerPlus = 1
 
-let clickAttack = 1
+let clickAttack = 10
 
 let engramRarity = {
     common: 0, uncommon: 0, rare: 0, legendary: 0, exotic: 0
@@ -127,25 +127,25 @@ function decryptEngram() { //Show Engram Decryption
         $("#whiteEngram").css("display", "none")
     }
 
-    if (glimmer >= 100 && engramRarity.uncommon >= 1) {
+    if (glimmer >= 20 && engramRarity.uncommon >= 1) {
         $("#greenEngram").css("display", "block")
     } else {
         $("#greenEngram").css("display", "none")
     }
 
-    if (glimmer >= 500 && engramRarity.rare >= 1) {
+    if (glimmer >= 30 && engramRarity.rare >= 1) {
         $("#blueEngram").css("display", "block")
     } else {
         $("#blueEngram").css("display", "none")
     }
 
-    if (glimmer >= 1000 && engramRarity.legendary >= 1) {
+    if (glimmer >= 40 && engramRarity.legendary >= 1) {
         $("#purpleEngram").css("display", "block")
     } else {
         $("#purpleEngram").css("display", "none")
     }
 
-    if (glimmer >= 5000 && engramRarity.exotic >= 1) {
+    if (glimmer >= 50 && engramRarity.exotic >= 1) {
         $("#orangeEngram").css("display", "block")
     } else {
         $("#orangeEngram").css("display", "none")
