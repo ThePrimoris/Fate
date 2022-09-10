@@ -9,6 +9,8 @@ $(document).ready(function() {
     
     let clickAttack = 5
 
+    console.log(Dreg)
+
     function getEnemyHP() {
     
         const enemyHP = {
@@ -33,15 +35,27 @@ $(document).ready(function() {
         let enemy = getEnemyHP()
         let enemyHP = enemy[1]
 
-        const enemyHPBarValue = document.getElementById("enemyHealthBarValue")
         const enemyHPBar = document.getElementById("enemyHealthBar")
+
         enemyHPBar.max = enemyHP
         enemyHPBar.value = enemyHP
+
+        const enemyHPBarValue = document.getElementById("enemyHealthBarValue")
+        
         enemyHPBarValue.innerHTML = enemyHP
         enemyHPBarValue.max = enemyHP 
     
         const output = document.getElementById("output")
         output.innerHTML = "Damage: " + clickAttack
+
+        let r = Math.floor(Math.random() * (11 - 0))
+            if (r < 3) {
+                document.getElementById("testEnemy").src = "assets/img/Dreg.jpg"
+            } else if(r < 5) {
+                document.getElementById("testEnemy").src = "assets/img/Vandal.jpg"
+            } else {
+                document.getElementById("testEnemy").src = "assets/img/Captain.jpg"
+            }
 
     $("#testEnemy").click(function() {
     
@@ -90,15 +104,6 @@ $(document).ready(function() {
             enemyHPBar.value = enemyHP
             enemyHPBarValue.innerHTML = enemyHP
             enemyHPBarValue.max = enemyHP
-
-            let r = Math.floor(Math.random() * (11 - 0))
-            if (r < 3) {
-                document.getElementById("testEnemy").src = "assets/img/Dreg.jpg"
-            } else if(r < 5) {
-                document.getElementById("testEnemy").src = "assets/img/Vandal.jpg"
-            } else {
-                document.getElementById("testEnemy").src = "assets/img/Captain.jpg"
-            }
             }, timeUntilNewEnemyAppears)
             }
     

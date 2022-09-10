@@ -1,25 +1,35 @@
     class Enemy {
-        constructor(hp, atk, shield = 0) {
+        constructor(hp, shield = 0) {
             this.hp = hp
             this.shield = shield
-            this.atk = atk
+
         }
     }
 
-    class Dreg extends Enemy {
-        constructor (hp, atk, shield) {
-            super (hp, atk, shield)
-        }
-    }
+    // Fallen
 
-    class Vandal extends Enemy {
-        constructor (hp, atk, shield) {
-            super (hp, atk, shield)
-        }
-    }
+     const Dreg = new Enemy(10)
+     const Vandal = new Enemy(25)
+     const Captain = new Enemy(50, 15) // Arc Shield
+     const Servitor = new Enemy(75)
 
-    class Captain extends Enemy {
-        constructor (hp, atk, shield) {
-            super (hp, atk, shield)
-        }
-    }
+    // Hive
+
+    const Thrall = new Enemy(10)
+    const Acolyte = new Enemy(25)
+    const Wizard = new Enemy(50, 15) // Solar Shield
+    const Knight = new Enemy(75)
+
+    // Cabal
+
+    const Legionary = new Enemy(10)
+    const Psion = new Enemy(25)
+    const Collosus = new Enemy(50)
+    const Centurion = new Enemy(75, 25) // Solar Shield
+
+    // Vex
+
+    const Goblin = new Enemy(10)
+    const Hobgoblin = new Enemy(25)
+    const Minotaur = new Enemy(50, 15) // Void Shield
+    const Hydra = new Enemy(75)
