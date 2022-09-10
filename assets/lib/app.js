@@ -45,17 +45,15 @@ $(document).ready(function () {
   let enemyHP = enemy[1];
 
   const enemyHPBar = document.getElementById("enemyHealthBar");
-
-  enemyHPBar.max = enemyHP;
-  enemyHPBar.value = enemyHP;
+    enemyHPBar.max = enemyHP;
+    enemyHPBar.value = enemyHP;
 
   const enemyHPBarValue = document.getElementById("enemyHealthBarValue");
-
-  enemyHPBarValue.innerHTML = enemyHP;
-  enemyHPBarValue.max = enemyHP;
+    enemyHPBarValue.innerHTML = enemyHP;
+    enemyHPBarValue.max = enemyHP;
 
   const output = document.getElementById("output");
-  output.innerHTML = "Damage: " + clickAttack;
+    output.innerHTML = "Damage: " + clickAttack;
 
   $("#testEnemy").click(function () {
     enemyHP -= clickAttack;

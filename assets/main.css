@@ -113,7 +113,7 @@ progress::-webkit-progress-value {
   align-content: stretch;
 }
 
-.flex-item:nth-child(1) {
+.engrams:nth-child(1) {
   -webkit-order: 0;
   -ms-flex-order: 0;
   order: 0;
@@ -125,7 +125,7 @@ progress::-webkit-progress-value {
   align-self: auto;
 }
 
-.flex-item:nth-child(2) {
+.engrams:nth-child(2) {
   -webkit-order: 0;
   -ms-flex-order: 0;
   order: 0;
