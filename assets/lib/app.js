@@ -12,8 +12,6 @@ $(document).ready(function () {
 
   let clickAttack = 5;
 
-  console.log(Dreg);
-
   function getEnemyHP() {
     const enemyHP = {
       1: ["minor", 25],
@@ -34,6 +32,15 @@ $(document).ready(function () {
     }
   }
 
+  let r = Math.floor(Math.random() * (11 - 0));
+  if (r < 3) {
+    document.getElementById("testEnemy").src = "assets/img/Dreg.jpg";
+  } else if (r >= 8) {
+    document.getElementById("testEnemy").src = "assets/img/Vandal.jpg";
+  } else {
+    document.getElementById("testEnemy").src = "assets/img/Captain.jpg";
+  }
+
   let enemy = getEnemyHP();
   let enemyHP = enemy[1];
 
@@ -49,15 +56,6 @@ $(document).ready(function () {
 
   const output = document.getElementById("output");
   output.innerHTML = "Damage: " + clickAttack;
-
-  let r = Math.floor(Math.random() * (11 - 0));
-  if (r < 3) {
-    document.getElementById("testEnemy").src = "assets/img/Dreg.jpg";
-  } else if (r < 5) {
-    document.getElementById("testEnemy").src = "assets/img/Vandal.jpg";
-  } else {
-    document.getElementById("testEnemy").src = "assets/img/Captain.jpg";
-  }
 
   $("#testEnemy").click(function () {
     enemyHP -= clickAttack;
@@ -106,6 +104,15 @@ $(document).ready(function () {
         enemyHPBar.value = enemyHP;
         enemyHPBarValue.innerHTML = enemyHP;
         enemyHPBarValue.max = enemyHP;
+
+        let r = Math.floor(Math.random() * (11 - 0));
+  if (r < 3) {
+    document.getElementById("testEnemy").src = "assets/img/Dreg.jpg";
+  } else if (r >= 8) {
+    document.getElementById("testEnemy").src = "assets/img/Vandal.jpg";
+  } else {
+    document.getElementById("testEnemy").src = "assets/img/Captain.jpg";
+  }
       }, timeUntilNewEnemyAppears);
     }
 
