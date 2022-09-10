@@ -17,13 +17,13 @@ $(document).ready(function() {
         
     let n = Math.floor(Math.random() * (100 - 0))
         if (n < 75) {
-            enemyHP = 25
+            enemyHP = enemyHP.minor
         } else if (n < 90) {
-            enemyHP = 50
+            enemyHP = enemyHP.major
         } else if (n < 98) {
-            enemyHP = 100
+            enemyHP = enemyHP.ultra
         }  else {
-            enemyHP = 200
+            enemyHP = enemyHP.boss
         }
             return enemyHP
         }
