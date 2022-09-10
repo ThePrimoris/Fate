@@ -11,30 +11,44 @@ $(document).ready(function() {
 
     function getEnemyHP() {
     
-    let enemyHP = {
-        minor: 25, major: 50, ultra: 100, boss: 200
-     }
+        const enemyHP = {
+            1: ['minor', 25],
+            2: ['major', 50], 
+            3: ['ultra', 100], 
+            4: ['boss', 200]
+         }
+            
+        let n = Math.floor(Math.random() * 100)
+            if (n < 75) {
+                return enemyHP[1]
+            } else if (n < 90) {
+                return enemyHP[2]
+            } else if (n < 98) {
+                return enemyHP[3]
+            }  else {
+                return enemyHP[4]
+            }
+        }
         
-    let n = Math.floor(Math.random() * (100 - 0))
-        if (n < 75) {
-            enemyHP = enemyHP.minor
-        } else if (n < 90) {
-            enemyHP = enemyHP.major
-        } else if (n < 98) {
-            enemyHP = enemyHP.ultra
-        }  else {
-            enemyHP = enemyHP.boss
-        }
-            return enemyHP
-        }
+        let enemy = getEnemyHP()
+        let enemyHP = enemy[1]
+
+        const enemyHPBarValue = document.getElementById("enemyHealthBarValue")
+        const enemyHPBar = document.getElementById("enemyHealthBar")
+        enemyHPBar.max = enemyHP
+        enemyHPBar.value = enemyHP
+        enemyHPBarValue.innerHTML = enemyHP
+        enemyHPBarValue.max = enemyHP 
     
-    let enemyHP = getEnemyHP()
-    
+        const output = document.getElementById("output")
+        output.innerHTML = "Damage: " + clickAttack
+
     $("#testEnemy").click(function() {
     
         enemyHP -= clickAttack
     
-        document.getElementById("enemyHealthBarValue").innerHTML = enemyHP
+        enemyHPBar.innerHTML = enemyHP
+        enemyHPBarValue.innerHTML = enemyHP
     
         document.getElementById("enemyHealthBar").value = enemyHP
     
@@ -42,17 +56,16 @@ $(document).ready(function() {
         
         if (enemyHP < 0) enemyHP = 0
     
-    
         if (enemyHP === 0) {
             glimmer += glimmerPlus * Math.floor(Math.random() * 50) + 25
     
-            if (engrams > 1 && engrams < 50) {
+            if (engrams >= 1 && engrams <= 50) {
                 engramRarity.common ++
-            } else if (engrams >= 51 && engrams < 75) {
+            } else if (engrams >= 51 && engrams <= 75) {
                 engramRarity.uncommon ++
-            } else if (engrams >= 76 && engrams < 89) {
+            } else if (engrams >= 76 && engrams <= 89) {
                 engramRarity.rare ++
-            } else if (engrams >= 90 && engrams < 98) {
+            } else if (engrams >= 90 && engrams <= 98) {
                 engramRarity.legendary ++
             } else if (engrams >= 99) {
                 engramRarity.exotic ++
@@ -65,8 +78,18 @@ $(document).ready(function() {
         if (enemyHP === 0) {
             $(".info").text("You have defeated the enemy.\nYou search for a new foe...")
             
-            enemyHP = getEnemyHP()
-            document.getElementById("enemyHealthBar").max = enemyHP
+            enemy = getEnemyHP()
+            enemyHP = enemy[1]
+            
+            $("#testEnemy").attr('disabled', true)
+            const timeUntilNewEnemyAppears = Math.floor(Math.random() * 500) + 1000
+            setTimeout(() => {
+            $("#testEnemy").removeAttr("disabled")
+            $(".info").text("A new Enemy appears. \nFight them")
+            enemyHPBar.max = enemyHP
+            enemyHPBar.value = enemyHP
+            enemyHPBarValue.innerHTML = enemyHP
+            enemyHPBarValue.max = enemyHP
 
             let r = Math.floor(Math.random() * (11 - 0))
             if (r < 3) {
@@ -76,19 +99,11 @@ $(document).ready(function() {
             } else {
                 document.getElementById("testEnemy").src = "assets/img/Captain.jpg"
             }
-            
-            $("#testEnemy").attr('disabled', true)
-            const timeUntilNewEnemyAppears = Math.floor(Math.random() * 10) + 1000
-            setTimeout(() => {
-            $("#testEnemy").removeAttr("disabled")
-            $(".info").text("Continue clicking.")
             }, timeUntilNewEnemyAppears)
             }
     
         changeInventory()
     })
-    
-    document.getElementById("enemyHealthBar").max = enemyHP
     
     // Inventory Changes
     
@@ -162,9 +177,12 @@ $(document).ready(function() {
 
         document.querySelectorAll(".engNum").forEach((element) => {
             let id = element.dataset.id;
+            console.log("HERE",id)
             let value = engramRarity[id]
-            if (value !== 0) {
+            if (value > 0) {
               element.innerText = value
+            } else {
+                element.innerText = ""
             }
           })
     }

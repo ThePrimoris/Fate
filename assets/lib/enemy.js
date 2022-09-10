@@ -1,4 +1,3 @@
-$(document).ready(function() {
     class Enemy {
         constructor(hp, atk, shield = 0) {
             this.hp = hp
@@ -24,5 +23,3 @@ $(document).ready(function() {
             super (hp, atk, shield)
         }
     }
-
-})
