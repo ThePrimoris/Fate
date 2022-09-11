@@ -45,15 +45,15 @@ $(document).ready(function () {
   let enemyHP = enemy[1];
 
   const enemyHPBar = document.getElementById("enemyHealthBar");
-    enemyHPBar.max = enemyHP;
-    enemyHPBar.value = enemyHP;
+  enemyHPBar.max = enemyHP;
+  enemyHPBar.value = enemyHP;
 
   const enemyHPBarValue = document.getElementById("enemyHealthBarValue");
-    enemyHPBarValue.innerHTML = enemyHP;
-    enemyHPBarValue.max = enemyHP;
+  enemyHPBarValue.innerHTML = enemyHP;
+  enemyHPBarValue.max = enemyHP;
 
   const output = document.getElementById("output");
-    output.innerHTML = "Damage: " + clickAttack;
+  output.innerHTML = "Damage: " + clickAttack;
 
   $("#testEnemy").click(function () {
     enemyHP -= clickAttack;
@@ -67,7 +67,7 @@ $(document).ready(function () {
 
     if (enemyHP < 0) enemyHP = 0;
 
-    if (enemyHP === 0) {
+    if (enemyHP == 0) {
       glimmer += glimmerPlus * Math.floor(Math.random() * 50) + 25;
 
       if (engrams >= 1 && engrams <= 50) {
@@ -85,7 +85,7 @@ $(document).ready(function () {
 
     document.getElementById("output").innerHTML = "Damage: " + clickAttack;
 
-    if (enemyHP === 0) {
+    if (enemyHP == 0) {
       $(".info").text(
         "You have defeated the enemy.\nYou search for a new foe..."
       );
@@ -104,13 +104,13 @@ $(document).ready(function () {
         enemyHPBarValue.max = enemyHP;
 
         let r = Math.floor(Math.random() * (11 - 0));
-  if (r < 3) {
-    document.getElementById("testEnemy").src = "assets/img/Dreg.jpg";
-  } else if (r >= 8) {
-    document.getElementById("testEnemy").src = "assets/img/Vandal.jpg";
-  } else {
-    document.getElementById("testEnemy").src = "assets/img/Captain.jpg";
-  }
+        if (r < 3) {
+          document.getElementById("testEnemy").src = "assets/img/Dreg.jpg";
+        } else if (r >= 8) {
+          document.getElementById("testEnemy").src = "assets/img/Vandal.jpg";
+        } else {
+          document.getElementById("testEnemy").src = "assets/img/Captain.jpg";
+        }
       }, timeUntilNewEnemyAppears);
     }
 
