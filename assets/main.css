@@ -194,7 +194,7 @@ progress::-webkit-progress-value {
 }
 
 .main .orbit, button:hover {
-    -webkit-box-shadow: inset -1px 1px 5px -3px #FFFFFF;
+    -webkit-box-shadow: 0px 3.9px 0px 0px #FFFFFF;
     box-shadow: 0px 3.9px 0px 0px #FFFFFF;
     cursor: pointer;
 }
