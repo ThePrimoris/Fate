@@ -158,7 +158,7 @@ progress::-webkit-progress-value {
   border-radius: 0px;
 }
 
-.main button {
+.main .orbit, button {
   border-top: 0px;
   border-right: 0px;
   border-left: 0px;
@@ -172,7 +172,7 @@ progress::-webkit-progress-value {
   cursor: pointer;
 }
 
-.main button:hover {
+.main .orbit, button:hover {
   border-color: #FFFFFF;
   border-bottom: solid;
   border-width: thick;
