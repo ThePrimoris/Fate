@@ -158,28 +158,6 @@ progress::-webkit-progress-value {
   border-radius: 0px;
 }
 
-/* .main .orbit, button {
-  border-top: 0px;
-  border-right: 0px;
-  border-left: 0px;
-  border-bottom: transparent;
-
-  background-color: transparent;
-  font-size: 18px;
-  font-weight: 785;
-  color: #9B9B9B;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
-.main .orbit, button:hover {
-  border-color: #FFFFFF;
-  border-bottom: solid;
-  border-width: thick;
-
-  color: #FFFFFF;
-} */
-
 .main .orbit, button {
   border-top: 0px;
   border-right: 0px;
@@ -196,5 +174,7 @@ progress::-webkit-progress-value {
 .main .orbit, button:hover {
     -webkit-box-shadow: 0px 3.9px 0px 0px #FFFFFF;
     box-shadow: 0px 3.9px 0px 0px #FFFFFF;
+
+    color: #FFFFFF;
     cursor: pointer;
 }
