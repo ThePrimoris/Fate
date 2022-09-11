@@ -120,7 +120,7 @@ $(document).ready(function () {
   // Inventory Changes
 
   function changeInventory() {
-    $("#glimmer").html("Glimmer: " + glimmer);
+    $("#glimmer").html(glimmer);
 
     if (engramRarity.common > 0) {
       $("#commonEngram").html(

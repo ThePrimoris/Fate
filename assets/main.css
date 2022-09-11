@@ -1,11 +1,11 @@
 :root {
-  --glimmer: #7ae1fd;
+  --glimmer: #FFFFFF;
 
-  --common: #c4bcb4;
+  --common: #C4BCB4;
   --uncommon: #347040;
-  --rare: #5076a3;
-  --legendary: #4e3263;
-  --exotic: #ceae32;
+  --rare: #5076A3;
+  --legendary: #4E3263;
+  --exotic: #CEAE32;
 
   --minor: red;
   --major: orange;
@@ -23,13 +23,23 @@ p {
   color: #ffffff;
 }
 
+#glimmerImg {
+  float: left;
+  margin-top: 15px;
+  margin-right: 6px;
+}
+
+#glimmerImg img {
+  display: block;
+}
+
 .director hr {
   width: 10%;
   margin-left: 0;
 }
 
 .tower hr {
-  width: 53%;
+  width: 51%;
   margin-left: 0;
 }
 
@@ -87,8 +97,6 @@ progress::-webkit-progress-value {
   width: 200px;
   text-align: left;
   padding-left: 10px;
-  background-color: #2e2e2e;
-  border-radius: 0px;
 }
 
 /* Rahool */
