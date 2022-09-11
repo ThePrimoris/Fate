@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  let glimmer = 10;
+  let glimmer = 0;
   glimmerPlus = 1;
 
   let engramRarity = {
@@ -82,7 +82,7 @@ $(document).ready(function () {
         engramRarity.exotic++;
       }
     }
-
+    
     document.getElementById("output").innerHTML = "Damage: " + clickAttack;
 
     if (enemyHP == 0) {

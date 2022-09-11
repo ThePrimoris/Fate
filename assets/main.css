@@ -23,8 +23,13 @@ p {
   color: #ffffff;
 }
 
-hr {
+.director hr {
   width: 10%;
+  margin-left: 0;
+}
+
+.tower hr {
+  width: 53%;
   margin-left: 0;
 }
 
