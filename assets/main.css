@@ -166,11 +166,6 @@ progress::-webkit-progress-value {
   color: #ffffff;
 }
 
-#testEnemy {
-  background-color: var(--exotic);
-  border-radius: 0px;
-}
-
 .main .orbit, button {
   border-top: 0px;
   border-right: 0px;
