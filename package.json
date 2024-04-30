@@ -1,0 +1,11 @@
+{
+  "name": "fate-afg",
+  "version": "0.5.0",
+  "main": "scripts/electron.js",
+  "scripts": {
+      "start": "electron ."
+  },
+  "devDependencies": {
+      "electron": "^14.0.0"
+  }
+}

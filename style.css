@@ -1,0 +1,302 @@
+:root {
+    --primary-color: #1e252f;
+    --secondary-color: #22324B;
+    --accent-color: #FFD700;
+    --border-color: #131313;
+}
+
+body {
+    background-color: var(--secondary-color);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Button styles */
+button {
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    border-color: gold;
+    padding: 10px 10px;
+    margin: 5px 5px;
+    font-size: 1.2em;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: hsl(215, 22%, 10%);
+}
+
+button:active {
+    background-color: hsl(215, 22%, 5%);
+}
+
+button#clearStorageBtn {
+    background-color: rgb(78, 37, 37);
+}
+
+button#clearStorageBtn:hover {
+    background-color: rgb(78, 37, 17);
+}
+
+#nav {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    width: 100%;
+    padding: 10px 0;
+    z-index: 1000; 
+}
+
+/* Map styles */
+#map {
+    display: block;
+    position: relative;
+    width: 800px;
+    height: 600px;
+}
+
+.map-item {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: black;
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    visibility: hidden;
+    width: auto;
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.map-item:hover .tooltip {
+    visibility: visible;
+}
+
+#forest {
+    background-image: url('images/Forest.png');
+    background-size: cover;
+    background-position: center;
+    top: 488px;
+    left: 103px;
+}
+
+#swamp {
+    background-image: url('images/Swamp.png');
+    background-size: cover;
+    background-position: center;
+    top: 361px;
+    left: 229px;
+}
+
+#mountains {
+    background-image: url('images/Mountains.png');
+    background-size: cover;
+    background-position: center;
+    top: 217px;
+    left: 542px;
+}
+
+#desert {
+    background-image: url('images/Desert.png');
+    background-size: cover;
+    background-position: center;
+    top: 100px;
+    left: 150px;
+}
+
+#map {
+    display: none;
+}
+
+#shops {
+    display: none;
+}
+
+.shopkeeper {
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid var(--border-color);
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.shopkeeper img {
+    width: 80px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+
+.shopkeeper p {
+    font-size: 14px;
+    color: white;
+}
+
+/* Inventory styles */
+#inventory {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-gap: 5px;
+    padding: 10px;
+    width: 400px;
+}
+
+.slot {
+    width: 64px;
+    height: 64px;
+    border-radius: 5px;
+    border: 2px solid var(--border-color);
+    background-color: var(--primary-color)
+}
+
+.slot img {
+    width: 64px;
+    height: 64px;
+    vertical-align: middle;
+}
+
+.slot span {
+    margin-left: 5px;
+    vertical-align: top;
+}
+
+/* Status message styles */
+#statusMessage {
+    transition: opacity 0.5s ease-out;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    display: none;
+    align-items: center;
+    background-color: var(--primary-color, #eee);
+    padding: 5px 20px;
+    border-radius: 5px;
+    border: 2px solid var(--border-color, #ccc);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+/* Currency styles */
+#currency {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: 5px 20px;
+    border-radius: 5px;
+    border: 2px solid var(--border-color);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#coin-image {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+}
+
+#coin-count {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+}
+
+@keyframes flyAndFade {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+}
+
+.coin-animation {
+    position: absolute;
+    color: rgb(145, 71, 71);
+    left: 50%; 
+    transform: translateX(-50%);
+    font-weight: bold;
+    pointer-events: none;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+    position: relative;
+    background-color: var(--secondary-color);
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.close {
+    color: black;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Combat styles */
+#combatLog {
+    max-height: 150px;
+    overflow-y: auto;
+    margin-top: 10px;
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+#playerStats, #enemyStats {
+    margin-top: 5px;
+}

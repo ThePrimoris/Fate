@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fate - Another Fantasy Game</title>
+    <link rel="shortcut icon" href="Coin.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <!-- utils -->
+    <script type="module" src="./scripts/utils/modal-handler.js" defer></script>
+    <!-- controllers-->
+    <!-- <script type="module" src="./scripts/controllers/combat-controller.js" defer></script> -->
+    <script type="module" src="./scripts/controllers/game-state-manager.js" defer></script>
+    <script type="module" src="./scripts/controllers/inventory-manager.js" defer></script>
+    <script type="module" src="./scripts/controllers/currency-manager.js" defer></script>
+    <script type="module" src="./scripts/controllers/shop-controller.js" defer></script>
+    <!-- main script-->
+    <script type="module" src="./scripts/app.js" defer></script>
+</head>
+<body>
+    <!-- Needs CSS -->
+    <div id="nav">
+        <button id="mapBtn">Map</button>
+        <button id="shopsBtn">Shops</button>
+        <button id="inventoryBtn">Inventory</button>
+        <button id="clearStorageBtn">Reset Game</button>
+        <button id="addCoinsDebug">+100 Coins</button>
+    </div>
+    
+    <div id="map">
+        <div class="map-item" id="forest">
+            <span class="tooltip"><b>Forest</b> <br> Level 1</span>
+        </div>
+
+        <div class="map-item" id="swamp">
+            <span class="tooltip"><b>Swamp</b> <br> Level 5</span>
+        </div>
+
+        <div class="map-item" id="mountains">
+            <span class="tooltip"><b>Mountains</b> <br> Level 10</span>
+        </div>
+
+        <div class="map-item" id="desert">
+            <span class="tooltip"><b>Desert</b> <br> Level 15</span>
+        </div>
+    </div>
+    
+    <div id="shops">
+        <h1>Shops</h1>
+        <div class="shopkeeper" id="merchant">
+            <img src="images/shopkeeper.png" alt="Merchant">
+            <p class="shopkeeperDialogue">Merchant: Hello, adventurer! Looking for something?</p>
+            <hr>
+            <button id="buyExtraSlot"></button>
+            <button id="sellWoodLogs">Sell Logs</button>
+        </div>
+
+        <!-- Unimplemented Shopkeepers
+        <div class="shopkeeper" id="blacksmith">
+            <img src="images/blacksmith.png" alt="Blacksmith">
+            <p class="shopkeeperDialogue">Blacksmith: Need some new gear?</p>
+            <hr>
+            <button id="buySword">Buy Sword (50 Coins)</button>
+            <button id="buyShield">Buy Shield (50 Coins)</button>
+        </div>
+
+        <div class="shopkeeper" id="sorcerer">
+            <img src="images/sorcerer.png" alt="Sorcerer">
+            <p class="shopkeeperDialogue">Sorcerer: Would you like some magical items?</p>
+            <hr>
+            <button id="buyStaff">Buy Staff (50 Coins)</button>
+            <button id="buyRunes">Buy Runes (50 Coins)</button>
+        </div>
+        Unimplimented Shopkeepers -->
+    </div>    
+
+    <div id="inventory">
+    </div>
+
+    <div id="statusMessage"></div>
+
+    <div id="currency">
+        <img src="images/Coin.png" id="coin-image">
+        <span id="coin-count"></span>
+        <div id="coin-animations"></div>
+    </div>
+<!--
+    <div>
+        <button onclick="openModal('goblinCamp')">Attack the Goblin Camp!</button>
+    </div>
+
+    <div id="goblinCamp" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Goblin Camp Battle!</h2>
+            <p><strong>Objective:</strong>Clear out the Goblin Camp</p>
+            <div id="playerStats">Player Health: <span id="playerHealth">100</span></div>
+            <div id="enemyStats">Enemy Health: <span id="enemyHealth">50</span></div>
+            <div id="combatLog"></div>
+            <button id="swordSlashBtn">Sword Slash</button>
+            <button id="defendBtn">Defend</button>
+
+        </div>
+    </div> -->
+    
+</body>
+</html>
